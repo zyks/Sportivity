@@ -1,5 +1,5 @@
 //
-//  UserController.swift
+//  UserViewController.swift
 //  Sportivity
 //
 //  Created by Paweł Zykowski on 13.05.2016.
@@ -9,16 +9,17 @@
 import UIKit
 
 
-class UserController: UIViewController {
+class UserViewController: UIViewController {
     
     @IBOutlet weak var helloLabel: UILabel!
     @IBOutlet weak var logOutButton: UIButton!
+    var usersWorker: UsersWorker?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.helloLabel.text = "Hello!"
+        self.helloLabel.text = "Hello, \(KCSUser.activeUser().username)!"
     }
     
     override func didReceiveMemoryWarning() {

@@ -1,5 +1,5 @@
 //
-//  LoginController.swift
+//  LoginViewController.swift
 //  Sportivity
 //
 //  Created by Paweł Zykowski on 13.05.2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -40,6 +40,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
         
         if status == true {
             NSLog("Log in succeeded")
+            performSegueWithIdentifier("fromLoginToUser", sender: nil)
         } else {
             NSLog("Log in failed")
             self.usernameTextField.text = ""
@@ -55,6 +56,13 @@ class LoginController: UIViewController, UITextFieldDelegate {
             self.activityIndicator.startAnimating()
         } else {
             self.activityIndicator.stopAnimating()
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "fromLoginToUser" {
+            let dvc = segue.destinationViewController as! UserViewController
+            dvc.usersWorker = self.usersWorker
         }
     }
     

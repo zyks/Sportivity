@@ -15,6 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        KCSClient.sharedClient().initializeKinveyServiceForAppKey(
+            "kid_b1ACRbruf-",
+            withAppSecret: "ce8aae151788428b9adf96cab23f3703",
+            usingOptions: nil
+        )
+        
         // Override point for customization after application launch.
         return true
     }

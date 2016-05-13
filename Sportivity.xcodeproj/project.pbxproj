@@ -12,9 +12,11 @@
 		141AB7C91CE5BA2B00DD0C5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 141AB7C71CE5BA2B00DD0C5E /* Main.storyboard */; };
 		141AB7CB1CE5BA2B00DD0C5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 141AB7CA1CE5BA2B00DD0C5E /* Assets.xcassets */; };
 		141AB7CE1CE5BA2B00DD0C5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 141AB7CC1CE5BA2B00DD0C5E /* LaunchScreen.storyboard */; };
+		680FAE76A450904BF3468909 /* Pods_Sportivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D93C15FA7C1BBAFB18A7F1B /* Pods_Sportivity.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D93C15FA7C1BBAFB18A7F1B /* Pods_Sportivity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sportivity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		141AB7C01CE5BA2B00DD0C5E /* Sportivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		141AB7C31CE5BA2B00DD0C5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		141AB7C51CE5BA2B00DD0C5E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		141AB7CA1CE5BA2B00DD0C5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		141AB7CD1CE5BA2B00DD0C5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		141AB7CF1CE5BA2B00DD0C5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		859993566CF1DCF9CC492853 /* Pods-Sportivity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportivity.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sportivity/Pods-Sportivity.release.xcconfig"; sourceTree = "<group>"; };
+		A33C5DA5FF0D767585670621 /* Pods-Sportivity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportivity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sportivity/Pods-Sportivity.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				680FAE76A450904BF3468909 /* Pods_Sportivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				141AB7C21CE5BA2B00DD0C5E /* Sportivity */,
 				141AB7C11CE5BA2B00DD0C5E /* Products */,
+				3819DDB9ACE25EFEB8CFBA5A /* Pods */,
+				EC795C4FAA5C86DED3FD4C2E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = Sportivity;
 			sourceTree = "<group>";
 		};
+		3819DDB9ACE25EFEB8CFBA5A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A33C5DA5FF0D767585670621 /* Pods-Sportivity.debug.xcconfig */,
+				859993566CF1DCF9CC492853 /* Pods-Sportivity.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EC795C4FAA5C86DED3FD4C2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D93C15FA7C1BBAFB18A7F1B /* Pods_Sportivity.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 141AB7D21CE5BA2B00DD0C5E /* Build configuration list for PBXNativeTarget "Sportivity" */;
 			buildPhases = (
+				254FAA036EEC3CF5495F274F /* 📦 Check Pods Manifest.lock */,
 				141AB7BC1CE5BA2B00DD0C5E /* Sources */,
 				141AB7BD1CE5BA2B00DD0C5E /* Frameworks */,
 				141AB7BE1CE5BA2B00DD0C5E /* Resources */,
+				09CC50AEC5D2E241D96DD33E /* 📦 Embed Pods Frameworks */,
+				8128B803DE23082D6CC1CC5A /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09CC50AEC5D2E241D96DD33E /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sportivity/Pods-Sportivity-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		254FAA036EEC3CF5495F274F /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8128B803DE23082D6CC1CC5A /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sportivity/Pods-Sportivity-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		141AB7BC1CE5BA2B00DD0C5E /* Sources */ = {
@@ -249,6 +324,7 @@
 		};
 		141AB7D31CE5BA2B00DD0C5E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A33C5DA5FF0D767585670621 /* Pods-Sportivity.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Sportivity/Info.plist;
@@ -260,6 +336,7 @@
 		};
 		141AB7D41CE5BA2B00DD0C5E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 859993566CF1DCF9CC492853 /* Pods-Sportivity.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Sportivity/Info.plist;
@@ -288,6 +365,7 @@
 				141AB7D41CE5BA2B00DD0C5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

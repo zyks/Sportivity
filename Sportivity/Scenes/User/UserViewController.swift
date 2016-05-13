@@ -22,6 +22,12 @@ class UserViewController: UIViewController {
         self.helloLabel.text = "Hello, \(KCSUser.activeUser().username)!"
     }
     
+    @IBAction func logOutTouchUpInside(sender: AnyObject) {
+        NSLog("Log out")
+        KCSUser.activeUser().logout()
+        performSegueWithIdentifier("fromUserToLogin", sender: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

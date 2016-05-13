@@ -66,6 +66,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func welcomeBackToLogin(segue: UIStoryboardSegue) {
+        NSLog("No active user: \(KCSUser.activeUser() == nil)")
+        self.usernameTextField.text = ""
+        self.passwordTextField.text = ""
+    }
+    
     @IBAction func backgroundTouched(sender: AnyObject) {
         self.hideKeyboard()
     }

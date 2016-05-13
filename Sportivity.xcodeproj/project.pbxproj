@@ -24,6 +24,7 @@
 		141AB7CA1CE5BA2B00DD0C5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		141AB7CD1CE5BA2B00DD0C5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		141AB7CF1CE5BA2B00DD0C5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14D983031CE5BF9000E50A50 /* Sportivity-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sportivity-Bridging-Header.h"; sourceTree = "<group>"; };
 		859993566CF1DCF9CC492853 /* Pods-Sportivity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportivity.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sportivity/Pods-Sportivity.release.xcconfig"; sourceTree = "<group>"; };
 		A33C5DA5FF0D767585670621 /* Pods-Sportivity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportivity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sportivity/Pods-Sportivity.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +68,7 @@
 				141AB7CA1CE5BA2B00DD0C5E /* Assets.xcassets */,
 				141AB7CC1CE5BA2B00DD0C5E /* LaunchScreen.storyboard */,
 				141AB7CF1CE5BA2B00DD0C5E /* Info.plist */,
+				14D983031CE5BF9000E50A50 /* Sportivity-Bridging-Header.h */,
 			);
 			path = Sportivity;
 			sourceTree = "<group>";
@@ -331,6 +333,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Sportivity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sportivity/Sportivity-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -343,6 +346,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Sportivity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sportivity/Sportivity-Bridging-Header.h";
 			};
 			name = Release;
 		};

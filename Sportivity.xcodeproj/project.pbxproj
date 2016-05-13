@@ -19,7 +19,7 @@
 		0D93C15FA7C1BBAFB18A7F1B /* Pods_Sportivity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sportivity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		141AB7C01CE5BA2B00DD0C5E /* Sportivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		141AB7C31CE5BA2B00DD0C5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		141AB7C51CE5BA2B00DD0C5E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		141AB7C51CE5BA2B00DD0C5E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../ViewController.swift; sourceTree = "<group>"; };
 		141AB7C81CE5BA2B00DD0C5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		141AB7CA1CE5BA2B00DD0C5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		141AB7CD1CE5BA2B00DD0C5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,15 +62,71 @@
 		141AB7C21CE5BA2B00DD0C5E /* Sportivity */ = {
 			isa = PBXGroup;
 			children = (
+				1452B6861CE5D64400B4DDC3 /* Models */,
+				1452B6881CE5D64400B4DDC3 /* Workers */,
+				1452B6871CE5D64400B4DDC3 /* Services */,
+				1452B6831CE5D64400B4DDC3 /* Scenes */,
 				141AB7C31CE5BA2B00DD0C5E /* AppDelegate.swift */,
-				141AB7C51CE5BA2B00DD0C5E /* ViewController.swift */,
 				141AB7C71CE5BA2B00DD0C5E /* Main.storyboard */,
-				141AB7CA1CE5BA2B00DD0C5E /* Assets.xcassets */,
 				141AB7CC1CE5BA2B00DD0C5E /* LaunchScreen.storyboard */,
-				141AB7CF1CE5BA2B00DD0C5E /* Info.plist */,
-				14D983031CE5BF9000E50A50 /* Sportivity-Bridging-Header.h */,
+				141AB7CA1CE5BA2B00DD0C5E /* Assets.xcassets */,
+				1452B6891CE5D67B00B4DDC3 /* Supporting Files */,
 			);
 			path = Sportivity;
+			sourceTree = "<group>";
+		};
+		1452B6831CE5D64400B4DDC3 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				1452B6841CE5D64400B4DDC3 /* Login */,
+				1452B6851CE5D64400B4DDC3 /* User */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		1452B6841CE5D64400B4DDC3 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				141AB7C51CE5BA2B00DD0C5E /* ViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		1452B6851CE5D64400B4DDC3 /* User */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		1452B6861CE5D64400B4DDC3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1452B6871CE5D64400B4DDC3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1452B6881CE5D64400B4DDC3 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		1452B6891CE5D67B00B4DDC3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				14D983031CE5BF9000E50A50 /* Sportivity-Bridging-Header.h */,
+				141AB7CF1CE5BA2B00DD0C5E /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		3819DDB9ACE25EFEB8CFBA5A /* Pods */ = {

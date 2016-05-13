@@ -21,12 +21,16 @@ class UsersWorker {
         self.userService.authenticateUser(user, withPassword: password, andCallFunction: function)
     }
     
+    func logOutCurrentUser() {
+        userService.logOutCurrentUser()
+    }
 }
 
 
 protocol UserManagementServiceProtocol {
     
     func authenticateUser(user: String, withPassword password: String, andCallFunction function: Bool -> ())
+    func logOutCurrentUser()
     // place for other functions like, sign up, password reset etc.
     
 }

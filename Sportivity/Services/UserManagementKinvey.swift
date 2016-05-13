@@ -21,5 +21,9 @@ class UserManagementKinvey : UserManagementServiceProtocol {
         )
     }
     
+    func logOutCurrentUser() {
+        KCSUser.activeUser().logout()
+    }
+    
 }
 

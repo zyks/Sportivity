@@ -24,7 +24,7 @@ class UserViewController: UIViewController {
     
     @IBAction func logOutTouchUpInside(sender: AnyObject) {
         NSLog("Log out")
-        KCSUser.activeUser().logout()
+        self.usersWorker!.logOutCurrentUser()
         performSegueWithIdentifier("fromUserToLogin", sender: nil)
     }
     

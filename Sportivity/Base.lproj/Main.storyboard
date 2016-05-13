@@ -33,21 +33,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uD-T9-dYi">
-                                <rect key="frame" x="225" y="320" width="150" height="40"/>
-                                <color key="backgroundColor" red="0.2016022408" green="0.57855460000000003" blue="0.81412259620000005" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="Q4K-Jj-eJu"/>
-                                    <constraint firstAttribute="height" constant="40" id="UvB-GQ-aOA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Log in">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="logInTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iRr-Xz-307"/>
-                                </connections>
-                            </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Nq8-ex-UlO">
                                 <rect key="frame" x="282" y="321" width="37" height="37"/>
                                 <constraints>
@@ -65,6 +50,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uD-T9-dYi">
+                                <rect key="frame" x="225" y="320" width="150" height="40"/>
+                                <color key="backgroundColor" red="0.2016022408" green="0.57855460000000003" blue="0.81412259620000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Q4K-Jj-eJu"/>
+                                    <constraint firstAttribute="height" constant="40" id="UvB-GQ-aOA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Log in">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logInTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iRr-Xz-307"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -94,6 +94,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="315" y="427"/>
+        </scene>
+        <!--User Controller-->
+        <scene sceneID="hbS-NN-HL6">
+            <objects>
+                <viewController id="Pjf-aW-svf" customClass="UserController" customModule="Sportivity" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4Xe-9a-HyO"/>
+                        <viewControllerLayoutGuide type="bottom" id="KUO-OW-zn5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="K4l-MT-WCK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h94-4Z-vyY">
+                                <rect key="frame" x="20" y="40" width="560" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjH-Jx-XS9">
+                                <rect key="frame" x="225" y="520" width="150" height="40"/>
+                                <color key="backgroundColor" red="0.2016022408" green="0.57855460000000003" blue="0.81412259620000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Log out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="h94-4Z-vyY" firstAttribute="top" secondItem="4Xe-9a-HyO" secondAttribute="bottom" constant="20" id="SgO-8p-iKt"/>
+                            <constraint firstItem="KUO-OW-zn5" firstAttribute="top" secondItem="kjH-Jx-XS9" secondAttribute="bottom" constant="40" id="hDI-iZ-gcI"/>
+                            <constraint firstItem="kjH-Jx-XS9" firstAttribute="centerX" secondItem="K4l-MT-WCK" secondAttribute="centerX" id="yhb-2Z-nKl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="helloLabel" destination="h94-4Z-vyY" id="tiG-be-DBV"/>
+                        <outlet property="logOutButton" destination="kjH-Jx-XS9" id="tg7-VZ-vp6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZEb-VK-bRv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1092" y="432"/>
         </scene>
     </scenes>
 </document>

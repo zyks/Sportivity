@@ -11,9 +11,14 @@ import UIKit
 
 class UserController: UIViewController {
     
+    @IBOutlet weak var helloLabel: UILabel!
+    @IBOutlet weak var logOutButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.helloLabel.text = "Hello!"
     }
     
     override func didReceiveMemoryWarning() {

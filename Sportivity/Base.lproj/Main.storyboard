@@ -129,10 +129,15 @@
                                     <action selector="logOutTouchUpInside:" destination="Pjf-aW-svf" eventType="touchUpInside" id="3a9-Mu-LUI"/>
                                 </connections>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FPt-tt-ir3">
+                                <rect key="frame" x="150" y="299" width="300" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="h94-4Z-vyY" firstAttribute="top" secondItem="4Xe-9a-HyO" secondAttribute="bottom" constant="20" id="SgO-8p-iKt"/>
+                            <constraint firstItem="FPt-tt-ir3" firstAttribute="centerX" secondItem="K4l-MT-WCK" secondAttribute="centerX" id="aIF-Mq-MRV"/>
+                            <constraint firstItem="FPt-tt-ir3" firstAttribute="centerY" secondItem="K4l-MT-WCK" secondAttribute="centerY" id="az5-6g-LVX"/>
                             <constraint firstItem="h94-4Z-vyY" firstAttribute="trailing" secondItem="K4l-MT-WCK" secondAttribute="trailingMargin" id="c7Y-Eo-SY8"/>
                             <constraint firstItem="KUO-OW-zn5" firstAttribute="top" secondItem="kjH-Jx-XS9" secondAttribute="bottom" constant="40" id="hDI-iZ-gcI"/>
                             <constraint firstItem="kjH-Jx-XS9" firstAttribute="centerX" secondItem="K4l-MT-WCK" secondAttribute="centerX" id="yhb-2Z-nKl"/>
@@ -142,6 +147,7 @@
                     <connections>
                         <outlet property="helloLabel" destination="h94-4Z-vyY" id="tiG-be-DBV"/>
                         <outlet property="logOutButton" destination="kjH-Jx-XS9" id="tg7-VZ-vp6"/>
+                        <outlet property="progressBar" destination="FPt-tt-ir3" id="Ddu-dw-5Id"/>
                         <segue destination="JeH-gu-EpE" kind="unwind" identifier="fromUserToLogin" unwindAction="welcomeBackToLogin:" id="zUZ-Id-2hW"/>
                     </connections>
                 </viewController>

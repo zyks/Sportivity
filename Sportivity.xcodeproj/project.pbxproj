@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1417D1281CE7092000C7E1E9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1417D1271CE7092000C7E1E9 /* User.swift */; };
 		1417D12C1CE7094100C7E1E9 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1417D12B1CE7094100C7E1E9 /* Activity.swift */; };
+		1417D12E1CE72BDD00C7E1E9 /* ActivitiesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1417D12D1CE72BDD00C7E1E9 /* ActivitiesWorker.swift */; };
+		1417D1301CE72C8C00C7E1E9 /* ActivityManagementKinvey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1417D12F1CE72C8C00C7E1E9 /* ActivityManagementKinvey.swift */; };
 		141AB7C41CE5BA2B00DD0C5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141AB7C31CE5BA2B00DD0C5E /* AppDelegate.swift */; };
 		141AB7C91CE5BA2B00DD0C5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 141AB7C71CE5BA2B00DD0C5E /* Main.storyboard */; };
 		141AB7CB1CE5BA2B00DD0C5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 141AB7CA1CE5BA2B00DD0C5E /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 		0D93C15FA7C1BBAFB18A7F1B /* Pods_Sportivity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sportivity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1417D1271CE7092000C7E1E9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1417D12B1CE7094100C7E1E9 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		1417D12D1CE72BDD00C7E1E9 /* ActivitiesWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesWorker.swift; sourceTree = "<group>"; };
+		1417D12F1CE72C8C00C7E1E9 /* ActivityManagementKinvey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityManagementKinvey.swift; sourceTree = "<group>"; };
 		141AB7C01CE5BA2B00DD0C5E /* Sportivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		141AB7C31CE5BA2B00DD0C5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		141AB7C81CE5BA2B00DD0C5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				145B4C631CE5E84C0005E872 /* UserManagementKinvey.swift */,
+				1417D12F1CE72C8C00C7E1E9 /* ActivityManagementKinvey.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				145B4C691CE5F38A0005E872 /* UsersWorker.swift */,
+				1417D12D1CE72BDD00C7E1E9 /* ActivitiesWorker.swift */,
 			);
 			path = Workers;
 			sourceTree = "<group>";
@@ -283,6 +289,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1417D12E1CE72BDD00C7E1E9 /* ActivitiesWorker.swift in Sources */,
+				1417D1301CE72C8C00C7E1E9 /* ActivityManagementKinvey.swift in Sources */,
 				145B4C6A1CE5F38A0005E872 /* UsersWorker.swift in Sources */,
 				141AB7C41CE5BA2B00DD0C5E /* AppDelegate.swift in Sources */,
 				1417D12C1CE7094100C7E1E9 /* Activity.swift in Sources */,

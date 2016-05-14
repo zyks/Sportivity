@@ -29,7 +29,7 @@ class UsersWorker {
 
 protocol UserManagementServiceProtocol {
     
-    init(needsInitialization: Bool, withParams params: [String: String])
+    init(needsInitialization: Bool, withParams params: [String: AnyObject])
     func authenticateUser(user: String, withPassword password: String, andCallFunction function: Bool -> ())
     func logOutCurrentUser()
     // place for other functions like, sign up, password reset etc.

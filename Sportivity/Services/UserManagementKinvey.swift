@@ -11,10 +11,10 @@ import Foundation
 
 class UserManagementKinvey : UserManagementServiceProtocol {
     
-    required init(needsInitialization: Bool, withParams params: [String: String]) {
+    required init(needsInitialization: Bool, withParams params: [String: AnyObject]) {
         if needsInitialization {
-            if let appID = params["appID"], appSecret = params["appSecret"] {
-                self.initializeKinveyClient(appID, appSecret: appSecret)
+            if let appID = params["appID"], appSecret = params["appSecret"] where appID is String && appSecret is String {
+                self.initializeKinveyClient(appID as! String, appSecret: appSecret as! String)
             } else { NSLog("Wrong parameters. Could not initialize Kinvey client.") }
         }
     }

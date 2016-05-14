@@ -19,8 +19,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             self.adjustComponentsToCurrentStatus()
         }
     }
-    let usersWorker: UsersWorker = UsersWorker(withService: UserManagementKinvey(needsInitialization: true, withParams: ["appID": "kid_b1ACRbruf-", "appSecret": "ce8aae151788428b9adf96cab23f3703"]))
-    
+    let usersWorker: UsersWorker = UsersWorker(
+        withService: UserManagementKinvey(
+            needsInitialization: true,
+            withParams: ["appID": "kid_b1ACRbruf-", "appSecret": "ce8aae151788428b9adf96cab23f3703"]
+        )
+    )
     
     override func viewDidLoad() {
         super.viewDidLoad()

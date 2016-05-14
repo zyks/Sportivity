@@ -24,7 +24,7 @@ class ActivityManagementKinvey : ActivityManagementServiceProtocol {
         }
     }
     
-    func loadActivities(of username: String, andCallFunction function: [Activity] -> ()) {
+    func loadActivities(of username: String, reportProgressWith function1: Float -> (), andWhenDone completion: [Activity] -> ()) {
         store!.queryWithQuery(
             KCSQuery(onField: "username", withExactMatchForValue: username),
             withCompletionBlock: { (objectsOrNil: [AnyObject]!, errorOrNil: NSError!) -> Void in
@@ -34,13 +34,11 @@ class ActivityManagementKinvey : ActivityManagementServiceProtocol {
                     for object in objectsOrNil {
                         result.append((object as! ActivityEntity).toActivity())
                     }
-                    function(result)
-                } else {
-                    NSLog("Could not load user activities, error occurred: %@", errorOrNil)
-                }
+                    completion(result)
+                } else { NSLog("Could not load user activities, error occurred: %@", errorOrNil) }
             },
             withProgressBlock: { (objects: [AnyObject]!, percentComplete: Double) -> Void in
-                //NSLog(String(percentComplete))
+                function1(Float(percentComplete))
             }
         )
     }

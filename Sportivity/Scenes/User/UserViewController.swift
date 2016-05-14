@@ -14,13 +14,30 @@ class UserViewController: UIViewController {
     @IBOutlet weak var helloLabel: UILabel!
     @IBOutlet weak var logOutButton: UIButton!
     var usersWorker: UsersWorker?
+    var activitiesWorker: ActivitiesWorker?
     var currentUser: User?
+    var userActivities: [Activity] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         self.helloLabel.text = "Hello, \(currentUser!.name)!"
+        
+        self.activitiesWorker = ActivitiesWorker(
+            withService: ActivityManagementKinvey(
+                needsInitialization: true,
+                withParams: ["collection": "Activities", "entityTemplate": ActivityEntity.self]
+            )
+        )
+        self.activitiesWorker!.loadActivities(of: currentUser!.name, andCallFunction: storeLoadedActivities)
+    }
+    
+    func storeLoadedActivities(activities: [Activity]) {
+        self.userActivities = activities
+        //for activity in self.userActivities {
+        //    NSLog("\(activity.type), \(activity.startsAt), \(activity.endsAt)")
+        //}
     }
     
     @IBAction func logOutTouchUpInside(sender: AnyObject) {

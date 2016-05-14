@@ -11,7 +11,7 @@ import Foundation
 
 class UsersWorker {
     
-    var userService :UserManagementServiceProtocol
+    var userService: UserManagementServiceProtocol
     
     init(withService service: UserManagementServiceProtocol) {
         self.userService = service
@@ -22,13 +22,14 @@ class UsersWorker {
     }
     
     func logOutCurrentUser() {
-        userService.logOutCurrentUser()
+        self.userService.logOutCurrentUser()
     }
 }
 
 
 protocol UserManagementServiceProtocol {
     
+    init(needsInitialization: Bool, withParams params: [String: String])
     func authenticateUser(user: String, withPassword password: String, andCallFunction function: Bool -> ())
     func logOutCurrentUser()
     // place for other functions like, sign up, password reset etc.

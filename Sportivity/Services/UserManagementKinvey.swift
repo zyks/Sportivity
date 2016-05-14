@@ -11,6 +11,22 @@ import Foundation
 
 class UserManagementKinvey : UserManagementServiceProtocol {
     
+    required init(needsInitialization: Bool, withParams params: [String: String]) {
+        if needsInitialization {
+            if let appID = params["appID"], appSecret = params["appSecret"] {
+                self.initializeKinveyClient(appID, appSecret: appSecret)
+            } else { NSLog("Wrong parameters. Could not initialize Kinvey client.") }
+        }
+    }
+    
+    func initializeKinveyClient(appID: String, appSecret: String) {
+        KCSClient.sharedClient().initializeKinveyServiceForAppKey(
+            appID,
+            withAppSecret: appSecret,
+            usingOptions: nil
+        )
+    }
+    
     func authenticateUser(user: String, withPassword password: String, andCallFunction function: Bool -> ()) {
         KCSUser.loginWithUsername(
             user,

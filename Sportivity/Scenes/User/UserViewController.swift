@@ -14,12 +14,13 @@ class UserViewController: UIViewController {
     @IBOutlet weak var helloLabel: UILabel!
     @IBOutlet weak var logOutButton: UIButton!
     var usersWorker: UsersWorker?
+    var currentUser: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.helloLabel.text = "Hello, \(KCSUser.activeUser().username)!"
+        self.helloLabel.text = "Hello, \(currentUser!.name)!"
     }
     
     @IBAction func logOutTouchUpInside(sender: AnyObject) {

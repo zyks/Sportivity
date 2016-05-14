@@ -21,6 +21,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     let usersWorker: UsersWorker = UsersWorker(withService: UserManagementKinvey(needsInitialization: true, withParams: ["appID": "kid_b1ACRbruf-", "appSecret": "ce8aae151788428b9adf96cab23f3703"]))
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -62,6 +63,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "fromLoginToUser" {
             let dvc = segue.destinationViewController as! UserViewController
+            dvc.currentUser = User(name: self.usernameTextField.text!)
             dvc.usersWorker = self.usersWorker
         }
     }

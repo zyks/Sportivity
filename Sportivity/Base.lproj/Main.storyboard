@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -116,8 +115,18 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FPt-tt-ir3">
+                                <rect key="frame" x="38" y="333" width="300" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="o01-4O-VMt"/>
+                                </constraints>
+                            </progressView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCX-S9-8IA" customClass="DonutChart" customModule="Sportivity" customModuleProvider="target">
+                                <rect key="frame" x="16" y="72" width="343" height="525"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjH-Jx-XS9">
-                                <rect key="frame" x="113" y="587" width="150" height="40"/>
+                                <rect key="frame" x="113" y="607" width="150" height="40"/>
                                 <color key="backgroundColor" red="0.2016022408" green="0.57855460000000003" blue="0.81412259620000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="EO3-eV-TxB"/>
@@ -131,43 +140,25 @@
                                     <action selector="logOutTouchUpInside:" destination="Pjf-aW-svf" eventType="touchUpInside" id="3a9-Mu-LUI"/>
                                 </connections>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FPt-tt-ir3">
-                                <rect key="frame" x="38" y="333" width="300" height="2"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="o01-4O-VMt"/>
-                                </constraints>
-                            </progressView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PzT-9v-aeA" customClass="DonutChart" customModule="Sportivity" customModuleProvider="target">
-                                <rect key="frame" x="16" y="72" width="343" height="343"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="PzT-9v-aeA" secondAttribute="height" multiplier="1:1" id="Zc8-gp-Pld"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="PzT-9v-aeA" secondAttribute="trailing" constant="130" id="RR8-ZM-MHU"/>
+                            <constraint firstItem="kjH-Jx-XS9" firstAttribute="top" secondItem="aCX-S9-8IA" secondAttribute="bottom" constant="10" id="Uk6-Dr-5rb"/>
+                            <constraint firstItem="aCX-S9-8IA" firstAttribute="trailing" secondItem="K4l-MT-WCK" secondAttribute="trailingMargin" id="ZWt-Eo-d0E"/>
                             <constraint firstItem="FPt-tt-ir3" firstAttribute="centerX" secondItem="K4l-MT-WCK" secondAttribute="centerX" id="aIF-Mq-MRV"/>
-                            <constraint firstItem="PzT-9v-aeA" firstAttribute="top" secondItem="h94-4Z-vyY" secondAttribute="bottom" constant="10" id="aqy-Fr-hxE"/>
                             <constraint firstItem="FPt-tt-ir3" firstAttribute="centerY" secondItem="K4l-MT-WCK" secondAttribute="centerY" id="az5-6g-LVX"/>
                             <constraint firstItem="h94-4Z-vyY" firstAttribute="trailing" secondItem="K4l-MT-WCK" secondAttribute="trailingMargin" id="c7Y-Eo-SY8"/>
                             <constraint firstItem="h94-4Z-vyY" firstAttribute="top" secondItem="4Xe-9a-HyO" secondAttribute="bottom" id="da4-Eg-V3e"/>
-                            <constraint firstItem="KUO-OW-zn5" firstAttribute="top" secondItem="kjH-Jx-XS9" secondAttribute="bottom" constant="40" id="hDI-iZ-gcI"/>
-                            <constraint firstItem="PzT-9v-aeA" firstAttribute="leading" secondItem="K4l-MT-WCK" secondAttribute="leadingMargin" id="mO2-Ys-YlP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="PzT-9v-aeA" secondAttribute="trailing" id="oP2-h8-zOb"/>
+                            <constraint firstItem="aCX-S9-8IA" firstAttribute="top" secondItem="h94-4Z-vyY" secondAttribute="bottom" constant="10" id="eIh-Xl-tCY"/>
+                            <constraint firstItem="KUO-OW-zn5" firstAttribute="top" secondItem="kjH-Jx-XS9" secondAttribute="bottom" constant="20" id="hDI-iZ-gcI"/>
+                            <constraint firstItem="aCX-S9-8IA" firstAttribute="leading" secondItem="K4l-MT-WCK" secondAttribute="leadingMargin" id="hFH-Bz-0CX"/>
                             <constraint firstItem="kjH-Jx-XS9" firstAttribute="centerX" secondItem="K4l-MT-WCK" secondAttribute="centerX" id="yhb-2Z-nKl"/>
                             <constraint firstItem="h94-4Z-vyY" firstAttribute="leading" secondItem="K4l-MT-WCK" secondAttribute="leadingMargin" id="zaA-JL-xhV"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="RR8-ZM-MHU"/>
-                            </mask>
-                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="donutChart" destination="PzT-9v-aeA" id="WG2-Ha-zP6"/>
+                        <outlet property="donutChart" destination="aCX-S9-8IA" id="QbO-Pm-yI5"/>
                         <outlet property="helloLabel" destination="h94-4Z-vyY" id="tiG-be-DBV"/>
                         <outlet property="logOutButton" destination="kjH-Jx-XS9" id="tg7-VZ-vp6"/>
                         <outlet property="progressBar" destination="FPt-tt-ir3" id="Ddu-dw-5Id"/>

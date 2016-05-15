@@ -28,6 +28,7 @@ class UserViewController: UIViewController {
     var activitiesWorker: ActivitiesWorker?
     var currentUser: User?
     var userActivities: [Activity] = []
+    var activitiesSummary: [String: Int] = [String: Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,9 +54,20 @@ class UserViewController: UIViewController {
     
     func storeLoadedActivities(activities: [Activity]) {
         self.userActivities = activities
-        //for activity in self.userActivities {
-        //    NSLog("\(activity.type), \(activity.startsAt), \(activity.endsAt)")
-        //}
+        self.summarizeUserActivities()
+    }
+    
+    // from date to date?
+    func summarizeUserActivities() {
+        for activity in self.userActivities {
+            let intervalInMinutes = Int(activity.endsAt.timeIntervalSinceDate(activity.startsAt) / 60)
+            
+            if self.activitiesSummary[activity.type] != nil {
+                self.activitiesSummary[activity.type]! += intervalInMinutes
+            } else {
+                self.activitiesSummary[activity.type] = intervalInMinutes
+            }
+        }
     }
     
     func fadeOutProgressBar() {

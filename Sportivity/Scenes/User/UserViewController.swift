@@ -9,11 +9,12 @@
 import UIKit
 
 
-class UserViewController: UIViewController {
+class UserViewController: UIViewController, DonutChartDataSource {
     
     @IBOutlet weak var helloLabel: UILabel!
     @IBOutlet weak var logOutButton: UIButton!
     @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var donutChart: DonutChart!
     
     var progress: Float = 0.0 {
         didSet {
@@ -28,7 +29,11 @@ class UserViewController: UIViewController {
     var activitiesWorker: ActivitiesWorker?
     var currentUser: User?
     var userActivities: [Activity] = []
-    var activitiesSummary: [String: Int] = [String: Int]()
+    var activitiesSummary: [String: Double] = [String: Double]() {
+        didSet {
+            self.donutChart.setNeedsDisplay()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +41,9 @@ class UserViewController: UIViewController {
         
         self.helloLabel.alpha = 0.0
         self.logOutButton.alpha = 0.0
+        self.donutChart.alpha = 0.0
         self.helloLabel.text = "Hello, \(currentUser!.name)!"
+        self.donutChart.dataSource = self
         
         self.activitiesWorker = ActivitiesWorker(
             withService: ActivityManagementKinvey(
@@ -60,7 +67,7 @@ class UserViewController: UIViewController {
     // from date to date?
     func summarizeUserActivities() {
         for activity in self.userActivities {
-            let intervalInMinutes = Int(activity.endsAt.timeIntervalSinceDate(activity.startsAt) / 60)
+            let intervalInMinutes = Double(activity.endsAt.timeIntervalSinceDate(activity.startsAt) / 60)
             
             if self.activitiesSummary[activity.type] != nil {
                 self.activitiesSummary[activity.type]! += intervalInMinutes
@@ -68,6 +75,10 @@ class UserViewController: UIViewController {
                 self.activitiesSummary[activity.type] = intervalInMinutes
             }
         }
+    }
+    
+    func dataForDonutChart() -> [String : Double] {
+        return self.activitiesSummary
     }
     
     func fadeOutProgressBar() {
@@ -88,6 +99,7 @@ class UserViewController: UIViewController {
             animations: {
                 self.helloLabel.alpha = 1.0
                 self.logOutButton.alpha = 1.0
+                self.donutChart.alpha = 1.0
             },
             completion: nil
         )

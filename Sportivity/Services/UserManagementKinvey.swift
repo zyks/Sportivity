@@ -11,12 +11,8 @@ import Foundation
 
 class UserManagementKinvey : UserManagementServiceProtocol {
     
-    required init(needsInitialization: Bool, withParams params: [String: AnyObject]) {
-        if needsInitialization {
-            if let appID = params["appID"], appSecret = params["appSecret"] where appID is String && appSecret is String {
-                self.initializeKinveyClient(appID as! String, appSecret: appSecret as! String)
-            } else { NSLog("Wrong parameters. Could not initialize Kinvey client.") }
-        }
+    init(appID: String, appSecret: String) {
+        self.initializeKinveyClient(appID, appSecret: appSecret)
     }
     
     func initializeKinveyClient(appID: String, appSecret: String) {
@@ -40,6 +36,6 @@ class UserManagementKinvey : UserManagementServiceProtocol {
     func logOutCurrentUser() {
         KCSUser.activeUser().logout()
     }
-    
+        
 }
 

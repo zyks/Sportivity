@@ -24,15 +24,17 @@ class UsersWorker {
     func logOutCurrentUser() {
         self.userService.logOutCurrentUser()
     }
+    
+    //func loadImage(of username: String, reportProgressWith function: Float -> (), andWhenDone completion: [Activity] -> ()) {
+    //    self.userService.loadImage(of: username, reportProgressWith: function, andWhenDone: completion)
+    //}
 }
 
 
 protocol UserManagementServiceProtocol {
     
-    init(needsInitialization: Bool, withParams params: [String: AnyObject])
     func authenticateUser(user: String, withPassword password: String, andCallFunction function: Bool -> ())
     func logOutCurrentUser()
-    // place for other functions like, sign up, password reset etc.
-    
+    //func loadImage(of username: String, reportProgressWith function: Float -> (), andWhenDone completion: [Activity] -> ())
 }
 

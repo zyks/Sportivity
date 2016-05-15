@@ -11,21 +11,17 @@ import Foundation
 
 class ActivityManagementKinvey : ActivityManagementServiceProtocol {
     
-    var store: KCSAppdataStore?
-    
-    required init(needsInitialization: Bool, withParams params: [String: AnyObject]) {
-        if needsInitialization {
-            if let collection = params["collection"], template = params["entityTemplate"] where collection is String {
-                self.store = KCSAppdataStore.storeWithOptions([
-                    KCSStoreKeyCollectionName : collection,
-                    KCSStoreKeyCollectionTemplateClass : template
-                    ])
-            } else { NSLog("Wrong parameters. Could not initialize Kinvey store.") }
-        }
+    let store: KCSAppdataStore
+
+    init() {
+        self.store = KCSAppdataStore.storeWithOptions([
+            KCSStoreKeyCollectionName : "Activities",
+            KCSStoreKeyCollectionTemplateClass : ActivityEntity.self
+        ])
     }
     
-    func loadActivities(of username: String, reportProgressWith function1: Float -> (), andWhenDone completion: [Activity] -> ()) {
-        store!.queryWithQuery(
+    func loadActivities(of username: String, reportProgressWith function: Float -> (), andWhenDone completion: [Activity] -> ()) {
+        store.queryWithQuery(
             KCSQuery(onField: "username", withExactMatchForValue: username),
             withCompletionBlock: { (objectsOrNil: [AnyObject]!, errorOrNil: NSError!) -> Void in
                 if errorOrNil == nil {
@@ -38,7 +34,7 @@ class ActivityManagementKinvey : ActivityManagementServiceProtocol {
                 } else { NSLog("Could not load user activities, error occurred: %@", errorOrNil) }
             },
             withProgressBlock: { (objects: [AnyObject]!, percentComplete: Double) -> Void in
-                function1(Float(percentComplete))
+                function(Float(percentComplete))
             }
         )
     }
@@ -65,5 +61,4 @@ class ActivityEntity : NSObject {
     }
     
 }
-
 

@@ -26,7 +26,7 @@ class ActivitiesWorker {
 
 protocol ActivityManagementServiceProtocol {
     
-    init(needsInitialization: Bool, withParams params: [String: AnyObject])
     func loadActivities(of username: String, reportProgressWith function: Float -> (), andWhenDone completion: [Activity] -> ())
     
 }
+

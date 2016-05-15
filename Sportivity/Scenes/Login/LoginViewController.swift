@@ -21,8 +21,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     let usersWorker: UsersWorker = UsersWorker(
         withService: UserManagementKinvey(
-            needsInitialization: true,
-            withParams: ["appID": "kid_b1ACRbruf-", "appSecret": "ce8aae151788428b9adf96cab23f3703"]
+            appID: "kid_b1ACRbruf-",
+            appSecret: "ce8aae151788428b9adf96cab23f3703"
         )
     )
     

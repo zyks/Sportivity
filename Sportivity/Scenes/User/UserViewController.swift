@@ -45,13 +45,7 @@ class UserViewController: UIViewController, DonutChartDataSource {
         self.helloLabel.text = "Hello, \(currentUser!.name)!"
         self.donutChart.dataSource = self
         
-        self.activitiesWorker = ActivitiesWorker(
-            withService: ActivityManagementKinvey(
-                needsInitialization: true,
-                withParams: ["collection": "Activities", "entityTemplate": ActivityEntity.self]
-            )
-        )
-        
+        self.activitiesWorker = ActivitiesWorker(withService: ActivityManagementKinvey())
         self.activitiesWorker!.loadActivities(
             of: currentUser!.name,
             reportProgressWith: { self.progress = $0 },

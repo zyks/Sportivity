@@ -11,7 +11,7 @@
 		1417D12C1CE7094100C7E1E9 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1417D12B1CE7094100C7E1E9 /* Activity.swift */; };
 		1417D12E1CE72BDD00C7E1E9 /* ActivitiesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1417D12D1CE72BDD00C7E1E9 /* ActivitiesWorker.swift */; };
 		1417D1301CE72C8C00C7E1E9 /* ActivityManagementKinvey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1417D12F1CE72C8C00C7E1E9 /* ActivityManagementKinvey.swift */; };
-		141941171CE855AF008382E7 /* DonutChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141941161CE855AF008382E7 /* DonutChart.swift */; };
+		141941171CE855AF008382E7 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141941161CE855AF008382E7 /* UserView.swift */; };
 		141AB7C41CE5BA2B00DD0C5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141AB7C31CE5BA2B00DD0C5E /* AppDelegate.swift */; };
 		141AB7C91CE5BA2B00DD0C5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 141AB7C71CE5BA2B00DD0C5E /* Main.storyboard */; };
 		141AB7CB1CE5BA2B00DD0C5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 141AB7CA1CE5BA2B00DD0C5E /* Assets.xcassets */; };
@@ -20,6 +20,8 @@
 		145B4C681CE5F1430005E872 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B4C671CE5F1430005E872 /* LoginViewController.swift */; };
 		145B4C6A1CE5F38A0005E872 /* UsersWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B4C691CE5F38A0005E872 /* UsersWorker.swift */; };
 		145B4C701CE61F8C0005E872 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B4C6F1CE61F8C0005E872 /* UserViewController.swift */; };
+		1479B5601CE9F59300D8B276 /* DonutChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479B55F1CE9F59300D8B276 /* DonutChartView.swift */; };
+		1479B5621CE9F5D800D8B276 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479B5611CE9F5D800D8B276 /* ListView.swift */; };
 		680FAE76A450904BF3468909 /* Pods_Sportivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D93C15FA7C1BBAFB18A7F1B /* Pods_Sportivity.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +31,7 @@
 		1417D12B1CE7094100C7E1E9 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		1417D12D1CE72BDD00C7E1E9 /* ActivitiesWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesWorker.swift; sourceTree = "<group>"; };
 		1417D12F1CE72C8C00C7E1E9 /* ActivityManagementKinvey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityManagementKinvey.swift; sourceTree = "<group>"; };
-		141941161CE855AF008382E7 /* DonutChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DonutChart.swift; path = Components/DonutChart.swift; sourceTree = "<group>"; };
+		141941161CE855AF008382E7 /* UserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserView.swift; path = Components/UserView.swift; sourceTree = "<group>"; };
 		141AB7C01CE5BA2B00DD0C5E /* Sportivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		141AB7C31CE5BA2B00DD0C5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		141AB7C81CE5BA2B00DD0C5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,6 +42,8 @@
 		145B4C671CE5F1430005E872 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		145B4C691CE5F38A0005E872 /* UsersWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersWorker.swift; sourceTree = "<group>"; };
 		145B4C6F1CE61F8C0005E872 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		1479B55F1CE9F59300D8B276 /* DonutChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DonutChartView.swift; path = Components/DonutChartView.swift; sourceTree = "<group>"; };
+		1479B5611CE9F5D800D8B276 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListView.swift; path = Components/ListView.swift; sourceTree = "<group>"; };
 		14D983031CE5BF9000E50A50 /* Sportivity-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sportivity-Bridging-Header.h"; sourceTree = "<group>"; };
 		859993566CF1DCF9CC492853 /* Pods-Sportivity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportivity.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sportivity/Pods-Sportivity.release.xcconfig"; sourceTree = "<group>"; };
 		A33C5DA5FF0D767585670621 /* Pods-Sportivity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportivity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sportivity/Pods-Sportivity.debug.xcconfig"; sourceTree = "<group>"; };
@@ -60,7 +64,9 @@
 		1417D1311CE778B700C7E1E9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				141941161CE855AF008382E7 /* DonutChart.swift */,
+				141941161CE855AF008382E7 /* UserView.swift */,
+				1479B55F1CE9F59300D8B276 /* DonutChartView.swift */,
+				1479B5611CE9F5D800D8B276 /* ListView.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -301,12 +307,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1417D12E1CE72BDD00C7E1E9 /* ActivitiesWorker.swift in Sources */,
+				1479B5601CE9F59300D8B276 /* DonutChartView.swift in Sources */,
 				1417D1301CE72C8C00C7E1E9 /* ActivityManagementKinvey.swift in Sources */,
 				145B4C6A1CE5F38A0005E872 /* UsersWorker.swift in Sources */,
 				141AB7C41CE5BA2B00DD0C5E /* AppDelegate.swift in Sources */,
 				1417D12C1CE7094100C7E1E9 /* Activity.swift in Sources */,
-				141941171CE855AF008382E7 /* DonutChart.swift in Sources */,
+				141941171CE855AF008382E7 /* UserView.swift in Sources */,
 				1417D1281CE7092000C7E1E9 /* User.swift in Sources */,
+				1479B5621CE9F5D800D8B276 /* ListView.swift in Sources */,
 				145B4C701CE61F8C0005E872 /* UserViewController.swift in Sources */,
 				145B4C681CE5F1430005E872 /* LoginViewController.swift in Sources */,
 				145B4C641CE5E84C0005E872 /* UserManagementKinvey.swift in Sources */,

@@ -121,7 +121,7 @@
                                     <constraint firstAttribute="width" constant="300" id="o01-4O-VMt"/>
                                 </constraints>
                             </progressView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCX-S9-8IA" customClass="DonutChart" customModule="Sportivity" customModuleProvider="target">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCX-S9-8IA" customClass="UserView" customModule="Sportivity" customModuleProvider="target">
                                 <rect key="frame" x="16" y="72" width="343" height="525"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </scrollView>
@@ -158,10 +158,10 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="donutChart" destination="aCX-S9-8IA" id="QbO-Pm-yI5"/>
                         <outlet property="helloLabel" destination="h94-4Z-vyY" id="tiG-be-DBV"/>
                         <outlet property="logOutButton" destination="kjH-Jx-XS9" id="tg7-VZ-vp6"/>
                         <outlet property="progressBar" destination="FPt-tt-ir3" id="Ddu-dw-5Id"/>
+                        <outlet property="userView" destination="aCX-S9-8IA" id="eP8-Nm-tPV"/>
                         <segue destination="JeH-gu-EpE" kind="unwind" identifier="fromUserToLogin" unwindAction="welcomeBackToLogin:" id="zUZ-Id-2hW"/>
                     </connections>
                 </viewController>

@@ -9,12 +9,12 @@
 import UIKit
 
 
-class UserViewController: UIViewController, DonutChartDataSource {
+class UserViewController: UIViewController, DonutChartViewDataSource, ListViewDataSource {
     
     @IBOutlet weak var helloLabel: UILabel!
     @IBOutlet weak var logOutButton: UIButton!
     @IBOutlet weak var progressBar: UIProgressView!
-    @IBOutlet weak var donutChart: DonutChart!
+    @IBOutlet weak var userView: UserView!
     
     var progress: [String: Float] = [String: Float]() {
         didSet {
@@ -30,11 +30,7 @@ class UserViewController: UIViewController, DonutChartDataSource {
     var activitiesWorker: ActivitiesWorker?
     var currentUser: User?
     var userActivities: [Activity] = []
-    var activitiesSummary: [String: Double] = [String: Double]() {
-        didSet {
-            self.donutChart.setNeedsDisplay()
-        }
-    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,9 +38,8 @@ class UserViewController: UIViewController, DonutChartDataSource {
         
         self.helloLabel.alpha = 0.0
         self.logOutButton.alpha = 0.0
-        self.donutChart.alpha = 0.0
+        self.userView.alpha = 0.0
         self.helloLabel.text = "Hello, \(currentUser!.name)!"
-        self.donutChart.dataSource = self
         
         self.activitiesWorker = ActivitiesWorker(withService: ActivityManagementKinvey())
         self.progress["loadingActivities"] = 0.0
@@ -64,33 +59,41 @@ class UserViewController: UIViewController, DonutChartDataSource {
     
     func storeLoadedActivities(activities: [Activity]) {
         self.userActivities = activities
-        self.summarizeUserActivities()
+        self.userView.addDonutView(self)
+        self.userView.addListView(self)
+        self.userView.adjustContentSize(activities.count + 1)
     }
     
     func storeLoadedImage(image: UIImage) {
         self.currentUser!.avatar = image
-        self.donutChart!.setNeedsDisplay()
+        self.userView.addImageView(image)
     }
     
-    // from date to date?
-    func summarizeUserActivities() {
+    func dataForDonutChart() -> [String: Double] {
+        var data = [String: Double]()
         for activity in self.userActivities {
             let intervalInMinutes = Double(activity.endsAt.timeIntervalSinceDate(activity.startsAt) / 60)
             
-            if self.activitiesSummary[activity.type] != nil {
-                self.activitiesSummary[activity.type]! += intervalInMinutes
+            if data[activity.type] != nil {
+                data[activity.type]! += intervalInMinutes
             } else {
-                self.activitiesSummary[activity.type] = intervalInMinutes
+                data[activity.type] = intervalInMinutes
             }
         }
+        return data
+    }
+
+    func dataForListView() -> [(String, Double)] {
+        var data = [(String, Double)]()
+        for activity in self.userActivities {
+            let durationInMinutes = Double(activity.endsAt.timeIntervalSinceDate(activity.startsAt) / 60)
+            data.append((activity.type, durationInMinutes))
+        }
+        return data
     }
     
-    func dataForDonutChart() -> [String : Double] {
-        return self.activitiesSummary
-    }
-    
-    func imageForDonutChart() -> UIImage? {
-        return self.currentUser!.avatar
+    func unitForListView() -> String {
+        return "min"
     }
     
     func fadeOutProgressBar() {
@@ -111,7 +114,7 @@ class UserViewController: UIViewController, DonutChartDataSource {
             animations: {
                 self.helloLabel.alpha = 1.0
                 self.logOutButton.alpha = 1.0
-                self.donutChart.alpha = 1.0
+                self.userView.alpha = 1.0
             },
             completion: nil
         )

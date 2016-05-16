@@ -54,11 +54,22 @@ class UserViewController: UIViewController, DonutChartDataSource {
             andWhenDone: self.storeLoadedActivities
         )
 
+        self.progress["loadingImage"] = 0.0
+        self.usersWorker!.loadImage(
+            of: currentUser!.name,
+            reportProgressWith: { self.progress["loadingImage"] = $0 },
+            andWhenDone: self.storeLoadedImage
+        )
     }
     
     func storeLoadedActivities(activities: [Activity]) {
         self.userActivities = activities
         self.summarizeUserActivities()
+    }
+    
+    func storeLoadedImage(image: UIImage) {
+        self.currentUser!.avatar = image
+        self.donutChart!.setNeedsDisplay()
     }
     
     // from date to date?
@@ -79,7 +90,7 @@ class UserViewController: UIViewController, DonutChartDataSource {
     }
     
     func imageForDonutChart() -> UIImage? {
-        return nil
+        return self.currentUser!.avatar
     }
     
     func fadeOutProgressBar() {

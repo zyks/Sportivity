@@ -16,9 +16,9 @@ class DonutChart : UIScrollView, DonutViewDataSource, ListViewDataSource {
     var data: [String: Double] = [String: Double]()
     var valuesSum: Double = 0.0
     var colors: [UIColor] = [UIColor]()
-    var imageView = UIImageView()
+    var image: UIImage = UIImage()
     let donutWidth: CGFloat = 50
-    
+    var added: [String: Bool] = ["donut": false, "list": false, "image": false]
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -26,17 +26,25 @@ class DonutChart : UIScrollView, DonutViewDataSource, ListViewDataSource {
     
     override func drawRect(rect: CGRect) {
         self.data = self.dataSource!.dataForDonutChart()
-        guard self.data.count > 0 else { return }
-        self.colors = self.generateColors(self.data.count)
-        self.valuesSum = self.data.values.reduce(0, combine: +)
+        if self.data.count > 0 {
+            self.colors = self.generateColors(self.data.count)
+            self.valuesSum = self.data.values.reduce(0, combine: +)
+            self.addDonutView()
+            self.addListView()
+            self.added["donut"] = true
+            self.added["list"] = true
+        }
+
+        if let image = self.dataSource!.imageForDonutChart() {
+            self.image = image
+            self.addImageView()
+            self.added["image"] = true
+        }
         
         self.contentSize = CGSize(
             width: bounds.width,
             height: bounds.width + CGFloat((self.data.count + 1) * 40) + 10
         )
-        self.addDonutView()
-        self.addListView()
-        self.addImageView()
     }
     
     func addDonutView() {
@@ -69,6 +77,7 @@ class DonutChart : UIScrollView, DonutViewDataSource, ListViewDataSource {
         let radius: CGFloat = bounds.width * 0.9 / 2
         let imageSize = (radius - self.donutWidth) * 2 - 5
         
+        let imageView = UIImageView(image: self.image)
         imageView.frame = CGRect(
             x: bounds.width/2 - imageSize/2,
             y: bounds.width/2 - imageSize/2,
@@ -202,9 +211,7 @@ class ListView : UIView {
 protocol DonutChartDataSource {
     
     func dataForDonutChart() -> [String: Double]
-//    func imageForDonutChart() -> UIImage? {
-//        return nil
-//    }
+    func imageForDonutChart() -> UIImage?
 }
 
 

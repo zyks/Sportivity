@@ -9,6 +9,7 @@
 class User {
     
     let name: String
+    var avatar: UIImage?
     
     init(name: String) {
         self.name = name

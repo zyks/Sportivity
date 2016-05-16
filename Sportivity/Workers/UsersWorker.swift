@@ -25,9 +25,9 @@ class UsersWorker {
         self.userService.logOutCurrentUser()
     }
     
-    //func loadImage(of username: String, reportProgressWith function: Float -> (), andWhenDone completion: [Activity] -> ()) {
-    //    self.userService.loadImage(of: username, reportProgressWith: function, andWhenDone: completion)
-    //}
+    func loadImage(of username: String, reportProgressWith function: Float -> (), andWhenDone completion: UIImage -> ()) {
+        self.userService.loadImage(of: username, reportProgressWith: function, andWhenDone: completion)
+    }
 }
 
 
@@ -35,6 +35,6 @@ protocol UserManagementServiceProtocol {
     
     func authenticateUser(user: String, withPassword password: String, andCallFunction function: Bool -> ())
     func logOutCurrentUser()
-    //func loadImage(of username: String, reportProgressWith function: Float -> (), andWhenDone completion: [Activity] -> ())
+    func loadImage(of username: String, reportProgressWith function: Float -> (), andWhenDone completion: UIImage -> ())
 }
 

@@ -36,6 +36,25 @@ class UserManagementKinvey : UserManagementServiceProtocol {
     func logOutCurrentUser() {
         KCSUser.activeUser().logout()
     }
-        
+    
+    func loadImage(of username: String, reportProgressWith function: Float -> (), andWhenDone completion: UIImage -> ()) {
+        KCSFileStore.downloadFileByQuery(
+            KCSQuery(onField: "user", withExactMatchForValue: username),
+            completionBlock: { (downloadedResources: [AnyObject]!, error: NSError!) -> Void in
+                if error == nil {
+                    NSLog("Successfully loaded user image")
+                    let file = downloadedResources[0] as! KCSFile
+                    let image = UIImage(contentsOfFile: file.localURL.path!)
+                    completion(image!)
+                } else {
+                    NSLog("Got an error: %@", error)
+                }
+            },
+            progressBlock: { (objects: [AnyObject]!, percentComplete: Double) -> Void in
+                function(Float(percentComplete))
+            }
+        )
+    }
+    
 }
 

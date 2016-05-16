@@ -57,6 +57,14 @@ class UserViewController: UIViewController, DonutChartViewDataSource, ListViewDa
         )
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    // MARK: Helpers
+    
     func storeLoadedActivities(activities: [Activity]) {
         self.userActivities = activities
         self.userView.addDonutView(self)
@@ -68,6 +76,9 @@ class UserViewController: UIViewController, DonutChartViewDataSource, ListViewDa
         self.currentUser!.avatar = image
         self.userView.addImageView(image)
     }
+    
+    
+    // MARK: DonutChartViewDataSource
     
     func dataForDonutChart() -> [String: Double] {
         var data = [String: Double]()
@@ -82,6 +93,9 @@ class UserViewController: UIViewController, DonutChartViewDataSource, ListViewDa
         }
         return data
     }
+    
+    
+    // MARK: ListViewDataSource
 
     func dataForListView() -> [(String, Double)] {
         var data = [(String, Double)]()
@@ -95,6 +109,9 @@ class UserViewController: UIViewController, DonutChartViewDataSource, ListViewDa
     func unitForListView() -> String {
         return "min"
     }
+    
+    
+    // MARK: Components animations
     
     func fadeOutProgressBar() {
         UIView.animateWithDuration(
@@ -120,15 +137,13 @@ class UserViewController: UIViewController, DonutChartViewDataSource, ListViewDa
         )
     }
     
+    
+    // MARK: View actions
+    
     @IBAction func logOutTouchUpInside(sender: AnyObject) {
         NSLog("Log out")
         self.usersWorker!.logOutCurrentUser()
         performSegueWithIdentifier("fromUserToLogin", sender: nil)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 }

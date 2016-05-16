@@ -34,11 +34,37 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.passwordTextField.delegate = self
     }
     
-    @IBAction func logInTouchUpInside(sender: AnyObject) {
-        NSLog("Trying to log in user: \(usernameTextField.text!), password: \(passwordTextField.text!)")
-        self.waitingForServerResponse = true
-        self.usersWorker.authenticateUser(usernameTextField.text!, withPassword: passwordTextField.text!, andCallFunction: afterServerResponse)
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
+    
+    
+    // MARK: Segues
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "fromLoginToUser" {
+            let dvc = segue.destinationViewController as! UserViewController
+            dvc.currentUser = User(name: self.usernameTextField.text!)
+            dvc.usersWorker = self.usersWorker
+        }
+    }
+    
+    @IBAction func welcomeBackToLogin(segue: UIStoryboardSegue) {
+        self.usernameTextField.text = ""
+        self.passwordTextField.text = ""
+    }
+    
+    
+    // MARK: UITextFieldDelegate
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.hideKeyboard()
+        return false
+    }
+    
+    
+    // MARK: Helpers
     
     func afterServerResponse(status: Bool) {
         self.waitingForServerResponse = false
@@ -64,36 +90,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "fromLoginToUser" {
-            let dvc = segue.destinationViewController as! UserViewController
-            dvc.currentUser = User(name: self.usernameTextField.text!)
-            dvc.usersWorker = self.usersWorker
-        }
+    func hideKeyboard() {
+        self.view.endEditing(true)
     }
     
-    @IBAction func welcomeBackToLogin(segue: UIStoryboardSegue) {
-        self.usernameTextField.text = ""
-        self.passwordTextField.text = ""
+    
+    // MARK: View actions
+    
+    @IBAction func logInTouchUpInside(sender: AnyObject) {
+        NSLog("Trying to log in user: \(usernameTextField.text!), password: \(passwordTextField.text!)")
+        self.waitingForServerResponse = true
+        self.usersWorker.authenticateUser(usernameTextField.text!, withPassword: passwordTextField.text!, andCallFunction: afterServerResponse)
     }
     
     @IBAction func backgroundTouched(sender: AnyObject) {
         self.hideKeyboard()
     }
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        self.hideKeyboard()
-        return false
-    }
-    
-    func hideKeyboard() {
-        self.view.endEditing(true)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+
 }
 

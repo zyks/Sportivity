@@ -85,7 +85,7 @@ class UserViewController: UIViewController, DonutChartDataSource {
     func fadeOutProgressBar() {
         UIView.animateWithDuration(
             0.5,
-            delay: 1.0,
+            delay: 0.5,
             options: [],
             animations: { self.progressBar.alpha = 0 },
             completion: nil
@@ -95,7 +95,7 @@ class UserViewController: UIViewController, DonutChartDataSource {
     func fadeInComponents() {
         UIView.animateWithDuration(
             0.75,
-            delay: 1.0,
+            delay: 0.5,
             options: [],
             animations: {
                 self.helloLabel.alpha = 1.0

@@ -16,10 +16,11 @@ class UserViewController: UIViewController, DonutChartDataSource {
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var donutChart: DonutChart!
     
-    var progress: Float = 0.0 {
+    var progress: [String: Float] = [String: Float]() {
         didSet {
-            progressBar.setProgress(self.progress, animated: true)
-            if self.progress == 1.0 {
+            let percent = self.progress.values.reduce(0.0, combine: +) / Float(self.progress.count)
+            progressBar.setProgress(percent, animated: true)
+            if percent == 1.0 {
                 self.fadeOutProgressBar()
                 self.fadeInComponents()
             }
@@ -46,11 +47,13 @@ class UserViewController: UIViewController, DonutChartDataSource {
         self.donutChart.dataSource = self
         
         self.activitiesWorker = ActivitiesWorker(withService: ActivityManagementKinvey())
+        self.progress["loadingActivities"] = 0.0
         self.activitiesWorker!.loadActivities(
             of: currentUser!.name,
-            reportProgressWith: { self.progress = $0 },
-            andWhenDone: storeLoadedActivities
+            reportProgressWith: { self.progress["loadingActivities"] = $0 },
+            andWhenDone: self.storeLoadedActivities
         )
+
     }
     
     func storeLoadedActivities(activities: [Activity]) {
@@ -73,6 +76,10 @@ class UserViewController: UIViewController, DonutChartDataSource {
     
     func dataForDonutChart() -> [String : Double] {
         return self.activitiesSummary
+    }
+    
+    func imageForDonutChart() -> UIImage? {
+        return nil
     }
     
     func fadeOutProgressBar() {

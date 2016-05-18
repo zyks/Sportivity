@@ -16,5 +16,9 @@ you can log in on account of any of them.
 
 
 ### Screenshots
+![Home](media/home.png?raw=true  "")
 ![Login](media/login.png?raw=true  "")
-![User](media/user.png?raw=true  "")
+![Loading](media/loading.png?raw=true  "")
+![Jon](media/jon.png?raw=true  "")
+![JonScroll](media/jon_scroll.png?raw=true  "")
+![Michael](media/michael.png?raw=true  "")
